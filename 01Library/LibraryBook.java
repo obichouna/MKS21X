@@ -42,7 +42,19 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
     abstract void returned();
     abstract String circulationStatus();
 
-    public int compareTo(){
-
+    public int compareTo(String x, String y){
+      if (Integer.parseInt(x) > Integer.parseInt(y)){
+        return 1;
+      }else if(Integer.parseInt(x) < Integer.parseInt(y)){
+        return -1;
+      }else{
+        return 0;
+      }
     }
+
+    public String toString(){
+      return title + ";" + author + ";" + isbn + ";" + callNumber + ";" +circulationStatus();
+    }
+
+
 }
