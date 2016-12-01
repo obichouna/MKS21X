@@ -7,15 +7,15 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
     }
 
     public String getTitle(){
-      return title;
+      return super.getTitle();
     }
 
     public String getAuthor(){
-      return author;
+      return super.getAuthor();
     }
 
     public String getISBN(){
-      return isbn;
+      return super.getISBN();
     }
 
     public String getCallNumber(){
@@ -23,15 +23,15 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
     }
 
     public void setAuthor(String x){
-      author = x;
+      super.setAuthor(x);
     }
 
     public void setTitle(String x){
-      title = x;
+      super.setTitle(x);
     }
 
     public void setISBN(String x){
-      isbn = x;
+      super.setISBN(x);
     }
 
     public void setCallNumber(String x){
@@ -42,10 +42,10 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
     abstract void returned();
     abstract String circulationStatus();
 
-    public int compareTo(String x, String y){
-      if (Integer.parseInt(x) > Integer.parseInt(y)){
+    public int compareTo(LibraryBook x){
+      if (Integer.parseInt(x.getCallNumber()) > Integer.parseInt(getCallNumber())){
         return 1;
-      }else if(Integer.parseInt(x) < Integer.parseInt(y)){
+      }else if(Integer.parseInt(x.getCallNumber()) < Integer.parseInt(getCallNumber())){
         return -1;
       }else{
         return 0;
@@ -53,7 +53,7 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
     }
 
     public String toString(){
-      return title + ";" + author + ";" + isbn + ";" + callNumber + ";" +circulationStatus();
+      return super.getTitle() + ";" + super.getAuthor() + ";" + super.getISBN() + ";" + callNumber + ";" +circulationStatus();
     }
 
 
