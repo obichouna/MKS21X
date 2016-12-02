@@ -65,7 +65,7 @@ public class CirculatingBook extends LibraryBook{
     dueDate = null;
   }
   public String circulationStatus(){
-    if (currentHolder.equals(null) && dueDate.equals(null)){
+    if (currentHolder == null && dueDate == null){
       return "Book is available.";
     }else{
       return "Current holder: " +currentHolder + " Due Date: " + dueDate;
