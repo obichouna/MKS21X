@@ -10,5 +10,25 @@ public class SuperArrayIterator implements Iterator<String> {
 
     }
 
+    public boolean hasNext(){
+	return startingPoint < array.size();
+
+
+    }
+
+    public String next(){
+	if (!hasNext()){
+	    throw new NoSuchElementException();
+	}
+	else{
+	    startingPoint++;
+	    return array.get(startingPoint + 1);
+	}
+
+    }
+
+    public void remove(){
+	throw new UnsupportedOperationException();
+    }
 
 }
