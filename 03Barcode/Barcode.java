@@ -2,7 +2,7 @@ public class Barcode implements Comparable<Barcode>{
 // instance variables
    private String _zip;
    private int _checkDigit;
-   private int test;
+   private int zipInt;
 
 // constructors
 //precondtion: _zip.length() = 5 and zip contains only digits.
@@ -14,13 +14,21 @@ public class Barcode implements Comparable<Barcode>{
       throw new RuntimeException();
     }else{
       try{
-        test = Integer.parseInt(zip);
+        zipInt = Integer.parseInt(zip);
       }
       catch (NumberFormatException e){
         throw new RuntimeException();
       }
     }
+    _zip = zip;
+    int sum = 0;
+        while (zipInt > 0) {
+            sum = sum + zipInt % 10;
+            zipInt = zipInt / 10;
+        }
+    checkdigit = sum;
   }
+
 // postcondition: Creates a copy of a bar code.
   public Barcode clone(){}
 
