@@ -26,7 +26,7 @@ public class Barcode implements Comparable<Barcode>{
             sum = sum + zipInt % 10;
             zipInt = zipInt / 10;
         }
-    checkdigit = sum;
+    _checkDigit = sum;
   }
 
 // postcondition: Creates a copy of a bar code.
@@ -34,7 +34,9 @@ public class Barcode implements Comparable<Barcode>{
 
 
 // postcondition: computes and returns the check sum for _zip
-  private int checkSum(){}
+  private int checkSum(){
+    return _zip + Integer.toString(_checkDigit);
+  }
 
 //postcondition: format zip + check digit + Barcode
 //ex. "084518  |||:::|::|::|::|:|:|::::|||::|:|"
