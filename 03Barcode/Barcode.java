@@ -26,7 +26,7 @@ public class Barcode implements Comparable<Barcode>{
             sum = sum + zipInt % 10;
             zipInt = zipInt / 10;
         }
-    _checkDigit = sum;
+    _checkDigit = sum % 10;
   }
 
 // postcondition: computes and returns the check sum for _zip
