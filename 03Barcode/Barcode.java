@@ -29,10 +29,6 @@ public class Barcode implements Comparable<Barcode>{
     _checkDigit = sum;
   }
 
-// postcondition: Creates a copy of a bar code.
-  public Barcode clone(){}
-
-
 // postcondition: computes and returns the check sum for _zip
   private int checkSum(){
     return _zip + Integer.toString(_checkDigit);
