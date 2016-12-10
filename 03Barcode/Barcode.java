@@ -2,8 +2,8 @@ public class Barcode implements Comparable<Barcode>{
 // instance variables
    private String _zip;
    private int _checkDigit;
-   private int zipInt;
-   private int zipCheck;
+   private int zipInt; // the zip in int form
+   private int zipCheck; // the zip in int form with the check digit
 
 // constructors
 //precondtion: _zip.length() = 5 and zip contains only digits.
@@ -33,6 +33,7 @@ public class Barcode implements Comparable<Barcode>{
 
 // postcondition: computes and returns the check sum for _zip
   private int checkSum(){
+    
   }
 
 //postcondition: format zip + check digit + Barcode
@@ -42,6 +43,6 @@ public class Barcode implements Comparable<Barcode>{
 
 // postcondition: compares the zip + checkdigit, in numerical order.
   public int compareTo(Barcode other){
-      return zipCheck.compareTo(other.zipCheck); 	  
+      return zipCheck.compareTo(other.zipCheck);
   }
 }
