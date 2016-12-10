@@ -32,8 +32,13 @@ public class Barcode implements Comparable<Barcode>{
   }
 
 // postcondition: computes and returns the check sum for _zip
-  private int checkSum(){
-    
+  private static int checkSum(int zip){
+    int sum = 0;
+        while (zip > 0) {
+            sum = sum + zip % 10;
+            zip = zip / 10;
+        }
+    return sum;
   }
 
 //postcondition: format zip + check digit + Barcode
