@@ -1,3 +1,4 @@
+import java.util.*;
 public class Barcode implements Comparable<Barcode>{
 // instance variables
    private String _zip;
@@ -44,6 +45,51 @@ public class Barcode implements Comparable<Barcode>{
     return sum;
   }
 
+  public static String toCode(String zip){
+    String barcode = new String("|");
+    String[] ary = new String[5];
+    if (zip.length() != 5){
+      throw new IllegalArgumentException();
+    }else{
+      try{
+        int temp = Integer.parseInt(zip);
+      }
+      catch (NumberFormatException e){
+        throw new IllegalArgumentException();
+      }
+    }
+    for (int i = 0; i < zip.length(); i++){
+      ary[i] = zip.charAt(i) + "";
+    }
+    for (int x = 0; x < ary.length; x++){
+      switch (Integer.parseInt(ary[x])){
+        case 0: barcode = barcode + "||:::";
+                break;
+        case 1: barcode = barcode + ":::||";
+                break;
+        case 2: barcode = barcode + "::|:|";
+                break;
+        case 3: barcode = barcode + "::||:";
+                break;
+        case 4: barcode = barcode + ":|:|:";
+                break;
+        case 5: barcode = barcode + ":||::";
+                break;
+        case 6: barcode = barcode + ":||::";
+                break;
+        case 7: barcode = barcode + "|:::|";
+                break;
+        case 8: barcode = barcode + "|::|:";
+                break;
+        case 9: barcode = barcode + "|:|::";
+                break;
+      }
+    }
+    barcode = barcode + "|";
+    return barcode;
+  }
+
+
 //postcondition: format zip + check digit + Barcode
 //ex. "084518  |||:::|::|::|::|:|:|::::|||::|:|"
   public String toString(){
@@ -77,6 +123,7 @@ public class Barcode implements Comparable<Barcode>{
         }
       }
       barcode = barcode + "|";
+      return fullZip + " " + barcode;
   }
 
 
