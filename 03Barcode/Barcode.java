@@ -129,6 +129,25 @@ public class Barcode implements Comparable<Barcode>{
 
 // postcondition: compares the zip + checkdigit, in numerical order.
   public int compareTo(Barcode other){
-      return zipCheck.compareTo(other.zipCheck);
+      return zipCheck - other.zipCheck;
   }
+
+  public static String toZip(String barcode){
+    boolean correct = true;
+    if(!(barcode.length() == 32)){
+      throw new IllegalArgumentException("Barcode is not the correct length");
+    }
+    if(barcode.charAt(0) - '|' != 0 || barcode.charAt(31) - '|' != 0){
+      throw new IllegalArgumentException("Barcode does not begin and end with |");
+    }
+    for (int i = 0; i < barcode.length(); i++){
+      if (!(barcode.charAt(i) == ':' || barcode.charAt(i) == '|')){
+        correct = false;
+      }
+    }
+    if (!(correct)){
+      throw new IllegalArgumentException("Barcode contains incorrect characters");
+    }
+  }
+
 }
