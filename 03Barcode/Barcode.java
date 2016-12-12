@@ -148,6 +148,41 @@ public class Barcode implements Comparable<Barcode>{
     if (!(correct)){
       throw new IllegalArgumentException("Barcode contains incorrect characters");
     }
+    String zip = "";
+    for (int x = 0; x < 6; x++){
+      String y = barcode.substring(x * 5 + 1, x * 5 + 6);
+      if(y.compareTo("||:::") == 0){
+		      zip += "0";
+	       }
+	    else if(y.compareTo(":::||") == 0){
+	       zip += "1";
+	      }
+	    else if(y.compareTo("::|:|") == 0){
+	        zip += "2";
+	      }
+	    else if(y.compareTo("::||:") == 0){
+	        zip += "3";
+	      }
+	    else if(y.compareTo(":|::|") == 0){
+	        zip += "4";
+	      }
+	    else if(y.compareTo(":|:|:") == 0){
+	        zip += "5";
+	      }
+	    else if(y.compareTo(":||::") == 0){
+	        zip += "6";
+	      }
+	    else if(y.compareTo("|:::|") == 0){
+	        zip += "7";
+	      }
+	    else if(y.compareTo("|::|:") == 0){
+	        zip += "8";
+	      }
+	    else if(y.compareTo("|:|::") == 0){
+	        zip += "9";
+        }
+    }
+    return zip.substring(0, 5);
   }
 
 }
