@@ -10,6 +10,11 @@ public class Sorts{
   *@param data  the elements to be sorted.
   */
   public static void selectionSort(int[] data){  }
-
+    int minimum;
+    for (int index = 0; index < data.length, index++){
+	for (int = x < data.length - index, x++){
+	    if (x 
+	    
+    }
 }
 
