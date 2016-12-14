@@ -1,6 +1,4 @@
 public class Sorts{
-  /**EDIT THIS METHOD TO MATCH YOUR NAME
-  */
   public static String name(){
     return "09.Bichouna.Othman";
   }
@@ -21,5 +19,4 @@ public class Sorts{
       data[i] = data[index];
       data[index] = minimum;
     }
-    return data;
 }
