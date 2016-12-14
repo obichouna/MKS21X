@@ -8,9 +8,9 @@ public class Sorts{
   */
   public static void selectionSort(int[] data){
     int minimum;
-    for (int index = 0; index < data.length - 1, index++){
+    for (int index = 0; index < data.length - 1; index++){
       int i = index;
-      for (int = x + index; x < data.length, x++){
+      for (int x = index; x < data.length; x++){
 	       if (data[i] > data[x]){
            i = x; // trying to get position "i" to be the smaller number
          }
@@ -19,4 +19,15 @@ public class Sorts{
       data[i] = data[index];
       data[index] = minimum;
     }
+  }
+    public String toString(){
+	String x = "";
+	for (
+    }
+
+    public static void main(String[] args){
+	int[] test = {3, 6, 1, 4, 10, 2};
+    }
+
+
 }
