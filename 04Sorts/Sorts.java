@@ -7,7 +7,7 @@ public class Sorts{
   *@param data  the elements to be sorted.
   */
   public static void selectionSort(int[] data){
-    int minimum;
+    int minimum = 0;
     for (int index = 0; index < data.length - 1; index++){
       int i = index;
       for (int x = index; x < data.length; x++){
@@ -20,13 +20,23 @@ public class Sorts{
       data[index] = minimum;
     }
   }
-    public String toString(){
-	String x = "";
-	for (
+   
+
+
+    public static String toString(int[] data){
+	String x = "[";
+	for (int i = 0; i < data.length; i++){
+	    x += data[i] + ", ";
+	}
+	x = x.substring(0, x.length() - 2);
+	x += "]";
+	return x;
     }
 
     public static void main(String[] args){
 	int[] test = {3, 6, 1, 4, 10, 2};
+	selectionSort(test);
+	System.out.println(toString(test));
     }
 
 
