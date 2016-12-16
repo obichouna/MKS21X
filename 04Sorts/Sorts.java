@@ -20,8 +20,15 @@ public class Sorts{
       data[index] = minimum;
     }
   }
-   
 
+  public static void insertionSort(int[] data){
+    for (int i = 1; i < data.length; i++){
+      int temp = data[i];
+      for (int x = i; x > 0; x--){
+        
+      }
+    }
+  }
 
     public static String toString(int[] data){
 	String x = "[";
