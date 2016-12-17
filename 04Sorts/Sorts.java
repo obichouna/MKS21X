@@ -22,12 +22,20 @@ public class Sorts{
   }
 
   public static void insertionSort(int[] data){
+    int temp;
     for (int i = 1; i < data.length; i++){
-      int temp = data[i];
       for (int x = i; x > 0; x--){
-        
+        if (data[x-1] > data[x]){
+          temp = data[x];
+          data[x] = data[x-1];
+          data[x-1] = temp;
+        }
       }
     }
+  }
+
+  public static void bubbleSort(int[] data){
+    
   }
 
     public static String toString(int[] data){
@@ -44,6 +52,9 @@ public class Sorts{
 	int[] test = {3, 6, 1, 4, 10, 2};
 	selectionSort(test);
 	System.out.println(toString(test));
+  int [] test2 = {5, 7, 3, 2, 4, 8};
+  insertionSort(test2);
+  System.out.println(toString(test2));
     }
 
 
