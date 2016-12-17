@@ -35,7 +35,12 @@ public class Sorts{
   }
 
   public static void bubbleSort(int[] data){
-    
+    for (int i = 0; i < data.length; i++){
+      if (data[i] > data[i + 1]){
+        
+      }
+      }
+    }
   }
 
     public static String toString(int[] data){
